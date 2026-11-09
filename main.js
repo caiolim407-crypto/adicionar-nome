@@ -6,7 +6,7 @@ const btnAdicionar = document.getElementById("btnAdicionar");
 
 
 function mostrarNomes() {
-  lista.innerHTML = "";
+  lista.innerHTML = ""; 
   for (let nome of nomes) {
     lista.innerHTML += `<li>${nome}</li>`;
   }
@@ -20,5 +20,10 @@ btnAdicionar.onclick = function() {
   }
 
 };
+campoNome.addEventListener("keydown", function(evento) {
+  if (evento.key === "Enter") {
+    btnAdicionar.click(); // Simula o clique do botão
+  }
+});
 
 mostrarNomes()
